@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo '"build step"'
+        echo '"Build Sage"'
       }
     }
     stage('test') {
@@ -13,7 +13,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        echo 'deploy stage'
+        echo 'Deploy Stage'
       }
     }
   }
