@@ -22,9 +22,9 @@ pipeline {
           mvnHome = tool 'M3'
           withEnv(["MVN_HOME=$mvnHome"]) {
             if (isUnix()) {
-              sh '"$MVN_HOME/bin/mvn" test'
+              sh '"$MVN_HOME/bin/mvn" test package'
             } else {
-              bat(/"%MVN_HOME%\bin\mvn" test/)
+              bat(/"%MVN_HOME%\bin\mvn" test package/)
             }
           }
         }
