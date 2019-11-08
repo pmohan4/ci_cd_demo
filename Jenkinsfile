@@ -4,6 +4,8 @@ pipeline {
     stage('Build Stage') {
       steps {
         script {
+          chekout(scm)
+          mvnHome = tool 'M3'
           mvn compile
         }
 
