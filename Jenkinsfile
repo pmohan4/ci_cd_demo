@@ -16,5 +16,20 @@ pipeline {
 
       }
     }
+    stage('Test Stage') {
+      steps {
+        script {
+          mvnHome = tool 'M3'
+          withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+              sh '"$MVN_HOME/bin/mvn" test'
+            } else {
+              bat(/"%MVN_HOME%\bin\mvn" test/)
+            }
+          }
+        }
+
+      }
+    }
   }
 }
